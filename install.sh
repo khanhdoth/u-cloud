@@ -11,13 +11,19 @@ ufw enable
 # install Docker
 apt -y install docker.io
 
-# Build my_hello dev container
 cd /home/khanh_doth
 mkdir dev
 cd dev
 mkdir git
 cd git
+
+# Clone u-cloud
+git clone https://github.com/khanhdoth/u-cloud
+
+# Clone my_hello
 git clone https://github.com/khanhdoth/my_hello
+
+# Build my_hello dev container
 cd my_hello
 sh dev.build.sh
 ufw allow 4000
