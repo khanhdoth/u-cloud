@@ -29,7 +29,7 @@ mkdir git
 cd git
 
 # Build postgres
-docker run -dit --name my-running-postgres -e POSTGRES_PASSWORD=postgres -d postgres -p 5432:5432
+docker run -it --name my-running-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ufw allow 5432
 
 # Clone u-cloud
