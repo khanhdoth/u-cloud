@@ -29,7 +29,7 @@ mkdir git
 cd git
 
 # Build postgres
-docker run -it --name my-running-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+docker run -dit --name my-running-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ufw allow 5432
 
 # Clone u-cloud
@@ -46,9 +46,16 @@ ufw allow 4001
 
 # Build Jenkins container
 cd /home/khanh_doth
-docker run -u 0 -it --name my-running-jenkins -e JENKINS_OPTS="--prefix=/jenkins" -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v "$PWD:/home/host" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker jenkins/jenkins:lts
+docker run -u 0 -dit --name my-running-jenkins -e JENKINS_OPTS="--prefix=/jenkins" -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home -v "$PWD:/home/host" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker jenkins/jenkins:lts
 ufw allow 8080
 ufw allow 50000
+
+# Build Portainer container
+cd /home/khanh_doth
+docker volume create portainer_data
+docker run -dit -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+ufw allow 8000
+ufw allow 9000
 
 # Build CodeServer container
 cd /home/khanh_doth
@@ -58,11 +65,6 @@ docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
 docker exec my-code-server git config --global user.name "khanhdoth"
 docker exec my-code-server git config --global credentail.helper store
 
-# Build Portainer container
-cd /home/khanh_doth
-docker volume create portainer_data
-docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
-ufw allow 8000
-ufw allow 9000
+
 
 
