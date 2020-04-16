@@ -54,9 +54,6 @@ ufw allow 50000
 cd /home/khanh_doth
 docker run -u 0 -dit --name my-code-server -p 8081:8080 -v "$PWD:/home/coder/project" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker codercom/code-server --auth none 
 ufw allow 8081
-docker exec -dit my-code-server git config --global user.email "khanh.doth@gmail.com"
-docker exec -dit my-code-server git config --global user.name "khanhdoth"
-docker exec -dit my-code-server git config --global credential.helper store
 
 # Build Portainer container
 cd /home/khanh_doth
@@ -65,3 +62,6 @@ docker run -dit -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -
 ufw allow 8000
 ufw allow 9000
 
+docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
+docker exec my-code-server git config --global user.name "khanhdoth"
+docker exec my-code-server git config --global credential.helper store
