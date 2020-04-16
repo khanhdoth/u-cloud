@@ -10,8 +10,8 @@ ifconfig
 echo 
 echo Please enter the localhost IP which the clients will connect to?
 echo
-read myLocalhostIP
-echo The IP $myLocalhostIP is entered and will be used for configuration. 
+# read myLocalhostIP
+# echo The IP $myLocalhostIP is entered and will be used for configuration. 
 
 # update
 apt update
