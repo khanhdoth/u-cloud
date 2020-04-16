@@ -62,6 +62,6 @@ docker run -dit -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -
 ufw allow 8000
 ufw allow 9000
 
-docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
-docker exec my-code-server git config --global user.name "khanhdoth"
-docker exec my-code-server git config --global credential.helper store
+# docker exec -dit my-code-server git config --global user.email "khanh.doth@gmail.com"
+# docker exec -dit my-code-server git config --global user.name "khanhdoth"
+# docker exec -dit my-code-server git config --global credential.helper store
