@@ -63,4 +63,4 @@ docker run -u 0 -dit --name my-code-server -p 8081:8080 -v "$PWD:/home/coder/pro
 ufw allow 8081
 docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
 docker exec my-code-server git config --global user.name "khanhdoth"
-docker exec my-code-server git config --global credentail.helper store
+docker exec my-code-server git config --global credential.helper store
