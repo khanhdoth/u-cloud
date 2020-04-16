@@ -3,6 +3,7 @@
 # export DEBIAN_FRONTEND=noninteractive
 
 # show IPs
+echo
 ifconfig
 
 # read localhost IP
