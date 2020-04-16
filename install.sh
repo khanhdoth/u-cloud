@@ -2,6 +2,14 @@
 
 # export DEBIAN_FRONTEND=noninteractive
 
+# show IPs
+ifconfig
+
+# read localhost IP
+echo Please enter the localhost IP which the clients will connect to?
+read hostIP
+echo The IP $hostIP is entered and will be used for configuration. 
+
 # update
 apt update
 
@@ -16,6 +24,10 @@ mkdir dev
 cd dev
 mkdir git
 cd git
+
+# Build postgres
+docker run -dit --name my-running-postgres -e POSTGRES_PASSWORD=postgres -d postgres -p 5432:5432
+ufw allow 5432
 
 # Clone u-cloud
 git clone https://github.com/khanhdoth/u-cloud
@@ -39,6 +51,9 @@ ufw allow 50000
 cd /home/khanh_doth
 docker run -u 0 -dit --name my-code-server -p 8081:8080 -v "$PWD:/home/coder/project" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker codercom/code-server --auth none 
 ufw allow 8081
+docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
+docker exec my-code-server git config --global user.name "khanhdoth"
+docker exec my-code-server git config --global credentail.helper store
 
 # Build Portainer container
 cd /home/khanh_doth
