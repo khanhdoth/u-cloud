@@ -59,7 +59,7 @@ ufw allow 9000
 
 # Build CodeServer container
 cd /home/khanh_doth
-docker run -u 0 -it --name my-code-server -p 8081:8080 -v "$PWD:/home/coder/project" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker codercom/code-server --auth none 
+docker run -u 0 -dit --name my-code-server -p 8081:8080 -v "$PWD:/home/coder/project" -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker codercom/code-server --auth none 
 ufw allow 8081
 docker exec my-code-server git config --global user.email "khanh.doth@gmail.com"
 docker exec my-code-server git config --global user.name "khanhdoth"
