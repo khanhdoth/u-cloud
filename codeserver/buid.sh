@@ -4,7 +4,7 @@ echo "Build CodeServer container"
 echo "Current user is :"
 whoami
 
-cd /home/khanh_doth/dev/git/u-cloud
+cd /home/khanh_doth/dev/git/u-cloud/codeserver
 
 # delete running container
 docker rm -f my-running-code-server
@@ -13,7 +13,7 @@ docker rm -f my-running-code-server
 docker image rm my-code-server
 
 # build new image
-docker build -t my-code-server . -f codeserver.Dockerfile
+docker build -t my-code-server .
 
 # create new container based on new image
 cd /home/khanh_doth

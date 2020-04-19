@@ -18,7 +18,8 @@ mkdir git
 cd git
 
 # Build postgres
-docker run -dit --name my-running-postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+docker run -dit --name my-running-postgres -v /home/khanh_doth/dev/git/u-cloud/postgres/data:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+docker run --name some-postgres -v /my/own/datadir:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpassword -d postgres:tag
 ufw allow 5432
 
 # Clone u-cloud
@@ -40,8 +41,8 @@ ufw allow 8080
 ufw allow 50000
 
 # Build CodeServer container
-cd /home/khanh_doth/dev/git/u-cloud
-sh codeserver.buid.sh
+cd /home/khanh_doth/dev/git/u-cloud/codeserver
+sh buid.sh
 ufw allow 8081
 
 # Build Portainer container
