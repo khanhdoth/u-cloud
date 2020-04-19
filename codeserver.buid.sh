@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Build CodeServer container"
 
-echo "Current user is:"
+echo "Current user is :"
 whoami
 
 cd /home/khanh_doth/dev/git/u-cloud
