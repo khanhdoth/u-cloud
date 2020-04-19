@@ -4,7 +4,7 @@ echo "Build postgres container"
 # delete running container
 docker rm -f my-running-postgres
 
-# create required folder 
+# create required folders
 mkdir /home/khanh_doth/dev/git/u-cloud/postgres/data/pg_commit_ts
 mkdir /home/khanh_doth/dev/git/u-cloud/postgres/data/pg_dynshmem
 mkdir /home/khanh_doth/dev/git/u-cloud/postgres/data/pg_replslot
