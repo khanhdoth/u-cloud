@@ -19,7 +19,7 @@ cd git
 
 # Build postgres
 cd /home/khanh_doth/dev/git/u-cloud/postgres
-sh buid.sh
+sh build.sh
 ufw allow 5432
 
 # Clone u-cloud
@@ -42,7 +42,7 @@ ufw allow 50000
 
 # Build CodeServer container
 cd /home/khanh_doth/dev/git/u-cloud/codeserver
-sh buid.sh
+sh build.sh
 ufw allow 8081
 
 # Build Portainer container
