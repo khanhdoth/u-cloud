@@ -40,7 +40,7 @@ sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
 sh /home/khanh_doth/dev/git/u-cloud/jenkins/build.sh
 
 # Build my_hello prod container
-sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
+sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
 
 # Build CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
