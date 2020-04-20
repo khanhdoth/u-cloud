@@ -1,0 +1,276 @@
+Started by user [8mha:////4Be+C9kteunNmdhG4RU2WOD+vBvPfs/xMVqlwC97noxnAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgZe/dLi1CL97IzEvIyUfABoJOvlwgAAAA==[0mKhanh Do
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/docker.prod.hello
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 491f4278175ad09b5d500f7e3054b7f535bbedb8 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 491f4278175ad09b5d500f7e3054b7f535bbedb8 # timeout=10
+Commit message: "u"
+ > git rev-list --no-walk f7b5430e927b39b197d602e26d866e04425bde95 # timeout=10
+[docker.prod.hello] $ /bin/sh -xe /tmp/jenkins1157264760785807722.sh
++ /home/host/dev/git/my_hello/prod.build.jenkins.sh
+Build My Hello production container from Jenkins
+Current user is:
+root
+my-running-hello
+Untagged: my-hello:prod
+Deleted: sha256:16971058caa672b9e4440d3dbf07b71480f553f2e834168ce47558416638f8e6
+Deleted: sha256:c3def5f57e03e0a59561da6282764dfeb9e7d1857434a7c5a30235b891e5d2b6
+Deleted: sha256:b7dd22200f52c64f56fd351569e90056c9ee202f6a48cd0bb6c75b24621320f3
+Deleted: sha256:d86f8344d9f3d933fe4b787afe0520959d36b4493b804155e356fd2d2c30a035
+Deleted: sha256:a4d7a1194e178d58d91d62022ee5d32b17f73bcdc0707bb72edeec2957437200
+Deleted: sha256:1d03a5c786191d2ccddc15ee26ea6f3b0e435019494bb634566db83aab73153a
+Deleted: sha256:117c2583721865482c4d75addc42bf1b92d39afb884d5bbfee4197edd3fe2af1
+Deleted: sha256:5133ea49bbfa2d5748376af59744ab762f2f3388768edd0215cd344e61029df7
+Deleted: sha256:f19b080755bd47fb1b9673dd89c30b34ab0690122a5ea1ee8023f7a23aa7b973
+Deleted: sha256:15a5c29709fcd3f4e4d2bda785a664ca88a2c4c95f2dbf5b338e978cb00152f3
+Deleted: sha256:3be1457138d0fdda2d121b6cd3df1d851e93636cf93f7362a7bc317a4b76f26d
+Sending build context to Docker daemon  74.58MB
+Step 1/29 : FROM elixir:1.9.0-alpine as build
+ ---> 7a6d28e4b511
+Step 2/29 : RUN apk add --update git build-base nodejs yarn python npm
+ ---> Running in 89be65803b98
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+(1/37) Upgrading musl (1.1.20-r4 -> 1.1.20-r5)
+(2/37) Installing binutils (2.31.1-r2)
+(3/37) Installing libmagic (5.36-r1)
+(4/37) Installing file (5.36-r1)
+(5/37) Installing gmp (6.1.2-r1)
+(6/37) Installing isl (0.18-r0)
+(7/37) Installing libgomp (8.3.0-r0)
+(8/37) Installing libatomic (8.3.0-r0)
+(9/37) Installing libgcc (8.3.0-r0)
+(10/37) Installing mpfr3 (3.1.5-r1)
+(11/37) Installing mpc1 (1.0.3-r1)
+(12/37) Installing libstdc++ (8.3.0-r0)
+(13/37) Installing gcc (8.3.0-r0)
+(14/37) Installing musl-dev (1.1.20-r5)
+(15/37) Installing libc-dev (0.7.1-r0)
+(16/37) Installing g++ (8.3.0-r0)
+(17/37) Installing make (4.2.1-r2)
+(18/37) Installing fortify-headers (1.0-r0)
+(19/37) Installing build-base (0.5-r1)
+(20/37) Installing nghttp2-libs (1.35.1-r1)
+(21/37) Installing libssh2 (1.9.0-r1)
+(22/37) Installing libcurl (7.64.0-r3)
+(23/37) Installing expat (2.2.8-r0)
+(24/37) Installing pcre2 (10.32-r1)
+(25/37) Installing git (2.20.3-r0)
+(26/37) Upgrading musl-utils (1.1.20-r4 -> 1.1.20-r5)
+(27/37) Installing c-ares (1.15.0-r0)
+(28/37) Installing http-parser (2.8.1-r0)
+(29/37) Installing libuv (1.23.2-r0)
+(30/37) Installing nodejs (10.14.2-r0)
+(31/37) Installing npm (10.14.2-r0)
+(32/37) Installing libbz2 (1.0.6-r7)
+(33/37) Installing libffi (3.2.1-r6)
+(34/37) Installing gdbm (1.13-r1)
+(35/37) Installing sqlite-libs (3.28.0-r2)
+(36/37) Installing python2 (2.7.16-r2)
+(37/37) Installing yarn (1.12.3-r0)
+Executing busybox-1.29.3-r10.trigger
+OK: 279 MiB in 57 packages
+Removing intermediate container 89be65803b98
+ ---> 30d59b7df34a
+Step 3/29 : RUN mkdir /app
+ ---> Running in f62615f82a17
+Removing intermediate container f62615f82a17
+ ---> 320a2a57d963
+Step 4/29 : WORKDIR /app
+ ---> Running in f6d7f9e8311f
+Removing intermediate container f6d7f9e8311f
+ ---> c915a653943b
+Step 5/29 : RUN mix local.hex --force &&     mix local.rebar --force
+ ---> Running in e779d28c7616
+* creating /root/.mix/archives/hex-0.20.5
+* creating /root/.mix/rebar
+* creating /root/.mix/rebar3
+Removing intermediate container e779d28c7616
+ ---> e49b9231ad60
+Step 6/29 : ENV MIX_ENV=prod
+ ---> Running in d13d99cf9ea6
+Removing intermediate container d13d99cf9ea6
+ ---> 01573f42a578
+Step 7/29 : ENV DATABASE_URL=ecto://postgres:postgres@172.17.0.1/hello_dev
+ ---> Running in 8907c70223f7
+Removing intermediate container 8907c70223f7
+ ---> 19c9372c3dc0
+Step 8/29 : ENV SECRET_KEY_BASE=VB+XSWMk5FvJVcXZIhJ0JFiN0R+E+2AxjIbx9NowOazugoqfKnqib47dmXD88cB+
+ ---> Running in 0a00a89fff27
+Removing intermediate container 0a00a89fff27
+ ---> 554b2cf73156
+Step 9/29 : ENV HTTP_PORT=5000
+ ---> Running in 037a29b49ab6
+Removing intermediate container 037a29b49ab6
+ ---> 0d5e0708914f
+Step 10/29 : ENV HTTPS_PORT=5001
+ ---> Running in 8792947aa61c
+Removing intermediate container 8792947aa61c
+ ---> 7d6e5c9aaf0f
+Step 11/29 : COPY mix.exs mix.lock ./
+ ---> 48652cb6648b
+Step 12/29 : COPY config config
+ ---> 85e65552a999
+Step 13/29 : RUN mix deps.get
+ ---> Running in c1b7f63000f4
+Resolving Hex dependencies...
+Dependency resolution completed:
+Unchanged:
+  connection 1.0.4
+  cowboy 2.7.0
+  cowlib 2.8.0
+  db_connection 2.2.1
+  decimal 1.8.1
+  ecto 3.4.1
+  ecto_sql 3.4.2
+  file_system 0.2.8
+  gettext 0.17.4
+  jason 1.2.0
+  mime 1.3.1
+  phoenix 1.4.16
+  phoenix_ecto 4.1.0
+  phoenix_html 2.14.1
+  phoenix_live_reload 1.2.1
+  phoenix_pubsub 1.1.2
+  plug 1.10.0
+  plug_cowboy 2.1.2
+  plug_crypto 1.1.2
+  postgrex 0.15.3
+  ranch 1.7.1
+  telemetry 0.4.1
+* Getting phoenix (Hex package)
+* Getting phoenix_pubsub (Hex package)
+* Getting phoenix_ecto (Hex package)
+* Getting ecto_sql (Hex package)
+* Getting postgrex (Hex package)
+* Getting phoenix_html (Hex package)
+* Getting phoenix_live_reload (Hex package)
+* Getting gettext (Hex package)
+* Getting jason (Hex package)
+* Getting plug_cowboy (Hex package)
+* Getting cowboy (Hex package)
+* Getting plug (Hex package)
+* Getting mime (Hex package)
+* Getting plug_crypto (Hex package)
+* Getting cowlib (Hex package)
+* Getting ranch (Hex package)
+* Getting file_system (Hex package)
+* Getting connection (Hex package)
+* Getting db_connection (Hex package)
+* Getting decimal (Hex package)
+* Getting ecto (Hex package)
+* Getting telemetry (Hex package)
+Removing intermediate container c1b7f63000f4
+ ---> 2ed34772fab6
+Step 14/29 : RUN mix deps.compile
+ ---> Running in d794e895a780
+==> connection
+Compiling 1 file (.ex)
+Generated connection app
+==> gettext
+Compiling 1 file (.yrl)
+Compiling 1 file (.erl)
+Compiling 20 files (.ex)
+Generated gettext app
+===> Compiling ranch
+===> Compiling telemetry
+==> decimal
+Compiling 1 file (.ex)
+Generated decimal app
+==> jason
+Compiling 8 files (.ex)
+Generated jason app
+==> db_connection
+Compiling 14 files (.ex)
+Generated db_connection app
+==> ecto
+Compiling 55 files (.ex)
+Generated ecto app
+==> phoenix_pubsub
+Compiling 13 files (.ex)
+Generated phoenix_pubsub app
+===> Compiling cowlib
+===> Compiling cowboy
+==> mime
+Compiling 2 files (.ex)
+Generated mime app
+==> postgrex
+Compiling 61 files (.ex)
+Generated postgrex app
+==> ecto_sql
+Compiling 26 files (.ex)
+Generated ecto_sql app
+==> plug_crypto
+Compiling 5 files (.ex)
+Generated plug_crypto app
+==> plug
+Compiling 1 file (.erl)
+Compiling 40 files (.ex)
+[91mwarning: System.stacktrace/0 outside of rescue/catch clauses is deprecated. If you want to support only Elixir v1.7+, you must access __STACKTRACE__ inside a rescue/catch. If you want to support earlier Elixir versions, move System.stacktrace/0 inside a rescue/catch
+  lib/plug/conn/wrapper_error.ex:23
+
+[0mGenerated plug app
+==> phoenix_html
+Compiling 8 files (.ex)
+Generated phoenix_html app
+==> plug_cowboy
+Compiling 6 files (.ex)
+Generated plug_cowboy app
+==> phoenix
+Compiling 67 files (.ex)
+[91mwarning: Plug.Crypto.safe_binary_to_term/1 is deprecated. Use non_executable_binary_to_term/2
+  lib/phoenix/token.ex:276
+
+[0mGenerated phoenix app
+==> phoenix_ecto
+Compiling 7 files (.ex)
+Generated phoenix_ecto app
+Removing intermediate container d794e895a780
+ ---> 674b4711229a
+Step 15/29 : COPY assets assets
+ ---> 4488253bf5ab
+Step 16/29 : COPY priv priv
+ ---> bece5121bf4f
+Step 17/29 : RUN cd assets && npm install && npm run deploy
+ ---> Running in 22ffe8fe133d
+[91mnpm[0m[91m [0m[91mWARN[0m[91m assets No description
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91moptional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.12 (node_modules/fsevents):
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mnotsup[0m[91m SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m
+[0mupdated 212 packages and audited 8659 packages in 13.438s
+found 0 vulnerabilities
+
+
+> @ deploy /app/assets
+> webpack --mode production
+
+[91msh: [0m[91mwebpack: not found[0m[91m
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91mfile[0m[91m sh
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91mcode[0m[91m ELIFECYCLE
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91merrno[0m[91m ENOENT
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91msyscall[0m[91m spawn
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m @ deploy: `webpack --mode production`
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m spawn ENOENT
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m 
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m Failed at the @ deploy script.
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m This is probably not a problem with npm. There is likely additional logging output above.
+[0m[91m
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m A complete log of this run can be found in:
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m     /root/.npm/_logs/2020-04-20T18_09_58_353Z-debug.log
+[0mThe command '/bin/sh -c cd assets && npm install && npm run deploy' returned a non-zero code: 1
+Total reclaimed space: 0B
+Unable to find image 'my-hello:prod' locally
+docker: Error response from daemon: pull access denied for my-hello, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+Error: No such container: my-running-hello
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

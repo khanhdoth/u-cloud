@@ -1,0 +1,10 @@
+commit 8ad4b50e028160149e3b559f3996811b52956923
+tree cd82966badf06a339db59502da9c306200f772ec
+parent 491f4278175ad09b5d500f7e3054b7f535bbedb8
+author khanhdoth <khanh.doth@gmail.com> 2020-04-20 18:19:46 +0000
+committer khanhdoth <khanh.doth@gmail.com> 2020-04-20 18:19:46 +0000
+
+    u
+
+
+:100755 100755 531c8d34b285bde56a3ccb95d5fa712cb69d0aa5 ec843b6d2e3695cfec9240f66527fb0ecfca05d9 M	prod.Dockerfile

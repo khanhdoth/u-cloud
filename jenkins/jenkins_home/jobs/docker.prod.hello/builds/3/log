@@ -1,0 +1,106 @@
+Started by user [8mha:////4Be+C9kteunNmdhG4RU2WOD+vBvPfs/xMVqlwC97noxnAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgZe/dLi1CL97IzEvIyUfABoJOvlwgAAAA==[0mKhanh Do
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/docker.prod.hello
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 491f4278175ad09b5d500f7e3054b7f535bbedb8 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 491f4278175ad09b5d500f7e3054b7f535bbedb8 # timeout=10
+Commit message: "u"
+ > git rev-list --no-walk 491f4278175ad09b5d500f7e3054b7f535bbedb8 # timeout=10
+[docker.prod.hello] $ /bin/sh -xe /tmp/jenkins2158834644061434300.sh
++ /home/host/dev/git/my_hello/prod.build.jenkins.sh
+Build My Hello production container from Jenkins
+Current user is:
+root
+Error: No such container: my-running-hello
+Error: No such image: my-hello:prod
+Sending build context to Docker daemon  74.58MB
+Step 1/29 : FROM elixir:1.9.0-alpine as build
+ ---> 7a6d28e4b511
+Step 2/29 : RUN apk add --update git build-base nodejs yarn python npm
+ ---> Using cache
+ ---> 30d59b7df34a
+Step 3/29 : RUN mkdir /app
+ ---> Using cache
+ ---> 320a2a57d963
+Step 4/29 : WORKDIR /app
+ ---> Using cache
+ ---> c915a653943b
+Step 5/29 : RUN mix local.hex --force &&     mix local.rebar --force
+ ---> Using cache
+ ---> e49b9231ad60
+Step 6/29 : ENV MIX_ENV=prod
+ ---> Using cache
+ ---> 01573f42a578
+Step 7/29 : ENV DATABASE_URL=ecto://postgres:postgres@172.17.0.1/hello_dev
+ ---> Using cache
+ ---> 19c9372c3dc0
+Step 8/29 : ENV SECRET_KEY_BASE=VB+XSWMk5FvJVcXZIhJ0JFiN0R+E+2AxjIbx9NowOazugoqfKnqib47dmXD88cB+
+ ---> Using cache
+ ---> 554b2cf73156
+Step 9/29 : ENV HTTP_PORT=5000
+ ---> Using cache
+ ---> 0d5e0708914f
+Step 10/29 : ENV HTTPS_PORT=5001
+ ---> Using cache
+ ---> 7d6e5c9aaf0f
+Step 11/29 : COPY mix.exs mix.lock ./
+ ---> Using cache
+ ---> 48652cb6648b
+Step 12/29 : COPY config config
+ ---> Using cache
+ ---> 85e65552a999
+Step 13/29 : RUN mix deps.get
+ ---> Using cache
+ ---> 2ed34772fab6
+Step 14/29 : RUN mix deps.compile
+ ---> Using cache
+ ---> 674b4711229a
+Step 15/29 : COPY assets assets
+ ---> Using cache
+ ---> 4488253bf5ab
+Step 16/29 : COPY priv priv
+ ---> Using cache
+ ---> bece5121bf4f
+Step 17/29 : RUN cd assets && npm install && npm run deploy
+ ---> Running in 3cf5e2ffa6f4
+[91mnpm[0m[91m [0m[91mWARN[0m[91m assets No description
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91moptional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.12 (node_modules/fsevents):
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mnotsup[0m[91m SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m
+[0mupdated 212 packages and audited 8659 packages in 14.927s
+found 0 vulnerabilities
+
+
+> @ deploy /app/assets
+> webpack --mode production
+
+[91msh: [0m[91mwebpack: not found[0m[91m
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91mfile[0m[91m sh
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91mcode[0m[91m ELIFECYCLE
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91merrno[0m[91m ENOENT
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m [0m[91msyscall[0m[91m spawn
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m @ deploy: `webpack --mode production`
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m spawn ENOENT
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m 
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m Failed at the @ deploy script.
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m This is probably not a problem with npm. There is likely additional logging output above.
+[0m[91m
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m A complete log of this run can be found in:
+[0m[91mnpm[0m[91m [0m[91mERR![0m[91m     /root/.npm/_logs/2020-04-20T18_11_54_645Z-debug.log
+[0mThe command '/bin/sh -c cd assets && npm install && npm run deploy' returned a non-zero code: 1
+Total reclaimed space: 0B
+Unable to find image 'my-hello:prod' locally
+docker: Error response from daemon: pull access denied for my-hello, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+Error: No such container: my-running-hello
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

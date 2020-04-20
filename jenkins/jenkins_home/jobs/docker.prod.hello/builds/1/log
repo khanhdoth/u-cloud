@@ -1,0 +1,402 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/docker.prod.hello
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/khanhdoth/my_hello
+ > git init /var/jenkins_home/workspace/docker.prod.hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision f7b5430e927b39b197d602e26d866e04425bde95 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f7b5430e927b39b197d602e26d866e04425bde95 # timeout=10
+Commit message: "u"
+First time build. Skipping changelog.
+[docker.prod.hello] $ /bin/sh -xe /tmp/jenkins6249156085892923497.sh
++ /home/host/dev/git/my_hello/prod.build.jenkins.sh
+Build My Hello production container from Jenkins
+Current user is:
+root
+my-running-hello
+Untagged: my-hello:prod
+Deleted: sha256:602a5fe24e3b0401ac394ac4ed37458fa39ca99c1cece9d994a39f52d9904a5a
+Deleted: sha256:940c11dc2608087815c5e0dda2dca51de7d7d1f4f89fabc49381c0ebf8c6b494
+Deleted: sha256:e6cdc09cd6f92d286c930a8931a0f08a4068b39749b80b5f7d80bc0d97a1a3b0
+Deleted: sha256:e06ae03f60e902e641e0296dbb7fe1f7611b7fa5751b4bfc5fd24d14024c5963
+Deleted: sha256:4e26a5f4b47eba5e10537ccbcdee06ab5bf4f06e7f0befe4455915b84c467fab
+Deleted: sha256:60968f7a6411622a383ba7cfc71ad8ea4cc2591fbd0faf7fd9f0509bef757d98
+Deleted: sha256:5142b2a3da7bc044ec7e56e0e734bcb1ad739f86f98140d07a54e73346576c0b
+Deleted: sha256:f77fe80bd6cbcabbce99ca6c7b2fe6b50b1a34b1efec69159d4b125a007ca9d5
+Deleted: sha256:9b3d859b5eac2b1469cb9588d999e5ebba14f7c8ca76750218652854eec1388e
+Deleted: sha256:fb8aca73148b1e222c56c7e6d5d1214147edc34e638294ca9b1738e1538fc78e
+Deleted: sha256:4bb5868c9427e3852ba4087399aa9bbf2a740103d140fbd9cece7027d2c9a415
+Sending build context to Docker daemon  104.4MB
+Step 1/29 : FROM elixir:1.9.0-alpine as build
+ ---> 7a6d28e4b511
+Step 2/29 : RUN apk add --update git build-base nodejs yarn python npm
+ ---> Running in 41377e570df6
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+(1/37) Upgrading musl (1.1.20-r4 -> 1.1.20-r5)
+(2/37) Installing binutils (2.31.1-r2)
+(3/37) Installing libmagic (5.36-r1)
+(4/37) Installing file (5.36-r1)
+(5/37) Installing gmp (6.1.2-r1)
+(6/37) Installing isl (0.18-r0)
+(7/37) Installing libgomp (8.3.0-r0)
+(8/37) Installing libatomic (8.3.0-r0)
+(9/37) Installing libgcc (8.3.0-r0)
+(10/37) Installing mpfr3 (3.1.5-r1)
+(11/37) Installing mpc1 (1.0.3-r1)
+(12/37) Installing libstdc++ (8.3.0-r0)
+(13/37) Installing gcc (8.3.0-r0)
+(14/37) Installing musl-dev (1.1.20-r5)
+(15/37) Installing libc-dev (0.7.1-r0)
+(16/37) Installing g++ (8.3.0-r0)
+(17/37) Installing make (4.2.1-r2)
+(18/37) Installing fortify-headers (1.0-r0)
+(19/37) Installing build-base (0.5-r1)
+(20/37) Installing nghttp2-libs (1.35.1-r1)
+(21/37) Installing libssh2 (1.9.0-r1)
+(22/37) Installing libcurl (7.64.0-r3)
+(23/37) Installing expat (2.2.8-r0)
+(24/37) Installing pcre2 (10.32-r1)
+(25/37) Installing git (2.20.3-r0)
+(26/37) Upgrading musl-utils (1.1.20-r4 -> 1.1.20-r5)
+(27/37) Installing c-ares (1.15.0-r0)
+(28/37) Installing http-parser (2.8.1-r0)
+(29/37) Installing libuv (1.23.2-r0)
+(30/37) Installing nodejs (10.14.2-r0)
+(31/37) Installing npm (10.14.2-r0)
+(32/37) Installing libbz2 (1.0.6-r7)
+(33/37) Installing libffi (3.2.1-r6)
+(34/37) Installing gdbm (1.13-r1)
+(35/37) Installing sqlite-libs (3.28.0-r2)
+(36/37) Installing python2 (2.7.16-r2)
+(37/37) Installing yarn (1.12.3-r0)
+Executing busybox-1.29.3-r10.trigger
+OK: 279 MiB in 57 packages
+Removing intermediate container 41377e570df6
+ ---> 4b9fb0583171
+Step 3/29 : RUN mkdir /app
+ ---> Running in f114f8ad53b7
+Removing intermediate container f114f8ad53b7
+ ---> 24568bbca47d
+Step 4/29 : WORKDIR /app
+ ---> Running in b2f41aa55fa3
+Removing intermediate container b2f41aa55fa3
+ ---> 3481b0b5a744
+Step 5/29 : RUN mix local.hex --force &&     mix local.rebar --force
+ ---> Running in a0eb70f3ab3d
+* creating /root/.mix/archives/hex-0.20.5
+* creating /root/.mix/rebar
+* creating /root/.mix/rebar3
+Removing intermediate container a0eb70f3ab3d
+ ---> 02681b097f13
+Step 6/29 : ENV MIX_ENV=prod
+ ---> Running in 2f38b0baae98
+Removing intermediate container 2f38b0baae98
+ ---> 1855d09d60d5
+Step 7/29 : ENV DATABASE_URL=ecto://postgres:postgres@172.17.0.1/hello_dev
+ ---> Running in d2edacf7486c
+Removing intermediate container d2edacf7486c
+ ---> 960e90a13164
+Step 8/29 : ENV SECRET_KEY_BASE=VB+XSWMk5FvJVcXZIhJ0JFiN0R+E+2AxjIbx9NowOazugoqfKnqib47dmXD88cB+
+ ---> Running in 4c112217d93c
+Removing intermediate container 4c112217d93c
+ ---> 7d671017fdcc
+Step 9/29 : ENV HTTP_PORT=5000
+ ---> Running in e289be3676d6
+Removing intermediate container e289be3676d6
+ ---> 0a68d8568b2a
+Step 10/29 : ENV HTTPS_PORT=5001
+ ---> Running in ca973e8e818e
+Removing intermediate container ca973e8e818e
+ ---> c90b9891bd29
+Step 11/29 : COPY mix.exs mix.lock ./
+ ---> 459bb83777ff
+Step 12/29 : COPY config config
+ ---> f6ce66231b8b
+Step 13/29 : RUN mix deps.get
+ ---> Running in c8216a5e6cca
+Resolving Hex dependencies...
+Dependency resolution completed:
+Unchanged:
+  connection 1.0.4
+  cowboy 2.7.0
+  cowlib 2.8.0
+  db_connection 2.2.1
+  decimal 1.8.1
+  ecto 3.4.1
+  ecto_sql 3.4.2
+  file_system 0.2.8
+  gettext 0.17.4
+  jason 1.2.0
+  mime 1.3.1
+  phoenix 1.4.16
+  phoenix_ecto 4.1.0
+  phoenix_html 2.14.1
+  phoenix_live_reload 1.2.1
+  phoenix_pubsub 1.1.2
+  plug 1.10.0
+  plug_cowboy 2.1.2
+  plug_crypto 1.1.2
+  postgrex 0.15.3
+  ranch 1.7.1
+  telemetry 0.4.1
+* Getting phoenix (Hex package)
+* Getting phoenix_pubsub (Hex package)
+* Getting phoenix_ecto (Hex package)
+* Getting ecto_sql (Hex package)
+* Getting postgrex (Hex package)
+* Getting phoenix_html (Hex package)
+* Getting phoenix_live_reload (Hex package)
+* Getting gettext (Hex package)
+* Getting jason (Hex package)
+* Getting plug_cowboy (Hex package)
+* Getting cowboy (Hex package)
+* Getting plug (Hex package)
+* Getting mime (Hex package)
+* Getting plug_crypto (Hex package)
+* Getting cowlib (Hex package)
+* Getting ranch (Hex package)
+* Getting file_system (Hex package)
+* Getting connection (Hex package)
+* Getting db_connection (Hex package)
+* Getting decimal (Hex package)
+* Getting ecto (Hex package)
+* Getting telemetry (Hex package)
+Removing intermediate container c8216a5e6cca
+ ---> b917ef15e281
+Step 14/29 : RUN mix deps.compile
+ ---> Running in e23bb74a1ddb
+==> connection
+Compiling 1 file (.ex)
+Generated connection app
+==> gettext
+Compiling 1 file (.yrl)
+Compiling 1 file (.erl)
+Compiling 20 files (.ex)
+Generated gettext app
+===> Compiling ranch
+===> Compiling telemetry
+==> decimal
+Compiling 1 file (.ex)
+Generated decimal app
+==> jason
+Compiling 8 files (.ex)
+Generated jason app
+==> db_connection
+Compiling 14 files (.ex)
+Generated db_connection app
+==> ecto
+Compiling 55 files (.ex)
+Compiling lib/ecto/query/builder/lock.ex (it's taking more than 15s)
+Compiling lib/ecto/repo/queryable.ex (it's taking more than 15s)
+Generated ecto app
+==> phoenix_pubsub
+Compiling 13 files (.ex)
+Generated phoenix_pubsub app
+===> Compiling cowlib
+===> Compiling cowboy
+==> mime
+Compiling 2 files (.ex)
+Generated mime app
+==> postgrex
+Compiling 61 files (.ex)
+Generated postgrex app
+==> ecto_sql
+Compiling 26 files (.ex)
+Generated ecto_sql app
+==> plug_crypto
+Compiling 5 files (.ex)
+Generated plug_crypto app
+==> plug
+Compiling 1 file (.erl)
+Compiling 40 files (.ex)
+[91mwarning: System.stacktrace/0 outside of rescue/catch clauses is deprecated. If you want to support only Elixir v1.7+, you must access __STACKTRACE__ inside a rescue/catch. If you want to support earlier Elixir versions, move System.stacktrace/0 inside a rescue/catch
+  lib/plug/conn/wrapper_error.ex:23
+
+[0mGenerated plug app
+==> phoenix_html
+Compiling 8 files (.ex)
+Generated phoenix_html app
+==> plug_cowboy
+Compiling 6 files (.ex)
+Generated plug_cowboy app
+==> phoenix
+Compiling 67 files (.ex)
+[91mwarning: Plug.Crypto.safe_binary_to_term/1 is deprecated. Use non_executable_binary_to_term/2
+  lib/phoenix/token.ex:276
+
+[0mGenerated phoenix app
+==> phoenix_ecto
+Compiling 7 files (.ex)
+Generated phoenix_ecto app
+Removing intermediate container e23bb74a1ddb
+ ---> 1f272025c695
+Step 15/29 : COPY assets assets
+ ---> f623e52ef17f
+Step 16/29 : COPY priv priv
+ ---> ee1f99601249
+Step 17/29 : RUN cd assets && npm install && npm run deploy
+ ---> Running in 01e6173a52f0
+[91mnpm[0m[91m [0m[91mWARN[0m[91m assets No description
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91moptional[0m[91m SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.12 (node_modules/fsevents):
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mnotsup[0m[91m SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+[0m[91m
+[0maudited 8659 packages in 7.222s
+found 0 vulnerabilities
+
+
+> @ deploy /app/assets
+> webpack --mode production
+
+Hash: 873052b0cc6e68f5e340
+Version: webpack 4.41.5
+Time: 2224ms
+Built at: 04/20/2020 6:06:43 PM
+                Asset       Size  Chunks             Chunk Names
+       ../css/app.css   9.58 KiB       0  [emitted]  ./js/app.js
+       ../favicon.ico   1.23 KiB          [emitted]  
+../images/phoenix.png   13.6 KiB          [emitted]  
+        ../robots.txt  202 bytes          [emitted]  
+               app.js   2.25 KiB       0  [emitted]  ./js/app.js
+Entrypoint ./js/app.js = ../css/app.css app.js
+[0] multi ./js/app.js 28 bytes {0} [built]
+[1] ./js/app.js 493 bytes {0} [built]
+[2] ./css/app.css 39 bytes {0} [built]
+[3] ../deps/phoenix_html/priv/static/phoenix_html.js 2.21 KiB {0} [built]
+    + 2 hidden modules
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!css/app.css:
+    Entrypoint mini-css-extract-plugin = *
+    [1] ./node_modules/css-loader/dist/cjs.js!./css/app.css 436 bytes {0} [built]
+    [2] ./node_modules/css-loader/dist/cjs.js!./css/phoenix.css 10.9 KiB {0} [built]
+        + 1 hidden module
+Removing intermediate container 01e6173a52f0
+ ---> 3fb7a532e954
+Step 18/29 : RUN mix phx.digest
+ ---> Running in 2d3e531d3c4f
+Check your digested files at "priv/static"
+Removing intermediate container 2d3e531d3c4f
+ ---> 92307babaffa
+Step 19/29 : COPY lib lib
+ ---> cd3390c91bd0
+Step 20/29 : RUN mix compile
+ ---> Running in f2b39c4d4e41
+Compiling 13 files (.ex)
+Generated hello app
+Removing intermediate container f2b39c4d4e41
+ ---> f774d7158891
+Step 21/29 : RUN mix release
+ ---> Running in c79768072f61
+* assembling master-0.1.0 on MIX_ENV=prod
+* skipping runtime configuration (config/releases.exs not found)
+
+Release created at _build/prod/rel/master!
+
+    # To start your system
+    _build/prod/rel/master/bin/master start
+
+Once the release is running:
+
+    # To connect to it remotely
+    _build/prod/rel/master/bin/master remote
+
+    # To stop it gracefully (you may also send SIGINT/SIGTERM)
+    _build/prod/rel/master/bin/master stop
+
+To list all commands:
+
+    _build/prod/rel/master/bin/master
+
+Removing intermediate container c79768072f61
+ ---> 82031e979b88
+Step 22/29 : FROM alpine:3.9 AS app
+ ---> 82f67be598eb
+Step 23/29 : RUN apk add --update bash openssl
+ ---> Running in bfab77865318
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.9/community/x86_64/APKINDEX.tar.gz
+(1/6) Installing ncurses-terminfo-base (6.1_p20190105-r0)
+(2/6) Installing ncurses-terminfo (6.1_p20190105-r0)
+(3/6) Installing ncurses-libs (6.1_p20190105-r0)
+(4/6) Installing readline (7.0.003-r1)
+(5/6) Installing bash (4.4.19-r1)
+Executing bash-4.4.19-r1.post-install
+(6/6) Installing openssl (1.1.1d-r2)
+Executing busybox-1.29.3-r10.trigger
+OK: 15 MiB in 20 packages
+Removing intermediate container bfab77865318
+ ---> 15a5c29709fc
+Step 24/29 : RUN mkdir /app
+ ---> Running in 22c1796c2c64
+Removing intermediate container 22c1796c2c64
+ ---> 5133ea49bbfa
+Step 25/29 : WORKDIR /app
+ ---> Running in 01e216f9afaf
+Removing intermediate container 01e216f9afaf
+ ---> 117c25837218
+Step 26/29 : COPY --from=build /app/_build/prod/rel/master ./
+ ---> a4d7a1194e17
+Step 27/29 : RUN chown -R nobody: /app
+ ---> Running in 05ee974683c4
+Removing intermediate container 05ee974683c4
+ ---> b7dd22200f52
+Step 28/29 : USER nobody
+ ---> Running in 28786e21a02e
+Removing intermediate container 28786e21a02e
+ ---> c3def5f57e03
+Step 29/29 : ENV HOME=/app
+ ---> Running in a11aec6ed9f4
+Removing intermediate container a11aec6ed9f4
+ ---> 16971058caa6
+Successfully built 16971058caa6
+Successfully tagged my-hello:prod
+Deleted Images:
+deleted: sha256:82031e979b888c31c61423d2fb06033cdd82c4c27214f2411883069bfc3fc821
+deleted: sha256:6dbedbff8c40c4c6c9655fc956241b6f3851f084b0a9c564c3fbc3984c1a5f45
+deleted: sha256:f774d7158891973040cd7daea28cab2800210485c103211243254c4c34972312
+deleted: sha256:599936f95ff8bff2a6ec1b1b9d4c12b1e855be2eea79245ae0c8bb047f8815c1
+deleted: sha256:cd3390c91bd0a10551b3ba1b2c774ce67660510d18dfaaa8ded3f141140bf13f
+deleted: sha256:a1914dfa823ddbfd3b88b3a9d3296321d9868d5322d528973cd8e7588ba0ba81
+deleted: sha256:92307babaffa3fe6d4a4a6f33ff8e03faa010d848a17662f2e696af5c33b9121
+deleted: sha256:247c3d2d4c07f8151703b760485a3554902357751db0fa547bd29f7fbc5f3722
+deleted: sha256:3fb7a532e954d0b7f3719a5dedd337108d704fbf8a08396a3c7ac08002239546
+deleted: sha256:e825fc5ca2a9d26dd0d3457e1055aa5ae53711783016f65967f5e01b2c9846d0
+deleted: sha256:ee1f996012494a0f0d450d788aa121f3ae3fd949a7395c8c715b7a5f0d2ced88
+deleted: sha256:d8ed0595ab9f13ed377691c0b1e9da5bbe2d70e2cab4447c319a3b6dab4cbd9d
+deleted: sha256:f623e52ef17fa1ac2778a4f3425f4e05706db4404633c2f67cc7aade9e67b3e9
+deleted: sha256:ac05e3562ad31df74fa74b4f1a73b5d4e400b6850ddf8a8e57089adc9d427c92
+deleted: sha256:1f272025c69592c01bc0f43488715f98da9443456f1da403e4bd9c0de2ce6f4e
+deleted: sha256:2e1aa4c9b63fa7a5cb7f36862d1c49a5cb4f655ef6e784a5c4e2ce1c025b201c
+deleted: sha256:b917ef15e28168a5dd5a8cdd5a73ac770e9bc88681ea75669a8cf9162f24bfc0
+deleted: sha256:e5747e8734c7fd59e6074c49c6b91749fcf211d87cb0b82e471d984afbaaede1
+deleted: sha256:f6ce66231b8bb7a16a08a57a3f1baf2bd6841f431c7e111d515eb4710af376c4
+deleted: sha256:e8a2f61670c4d53c7fa1621cae680be12647b6e27cddd70a1f5f760cadec6370
+deleted: sha256:459bb83777ff686ed2df658095e6e67bd3b0d982769160e49590be01fd9ea90c
+deleted: sha256:155e689c48c67b150a294012f5ad353b849f1b58cfcd8ae935a13491ebf7dc05
+deleted: sha256:c90b9891bd2967d524751a97a95ed768e6a88ea19fadee22fd82f035a2f0a6b3
+deleted: sha256:0a68d8568b2a640a3a4f60ae371544be1c3ca041c77f1af3c030c23cffd8ee87
+deleted: sha256:7d671017fdcc0041d406f46442fec9f43afc4851fff59015e2e61baf208df48c
+deleted: sha256:960e90a131640f9c52820506969cb21d8a42267b2b3ff098e4542af5433a6a1d
+deleted: sha256:1855d09d60d58f65e865983473a3ce47d9308aac30acd4b5e3bdb700c61a8679
+deleted: sha256:02681b097f13e579e1fe5a46e7dc85b98967a768575834a3fa500f9e39654687
+deleted: sha256:990f4b3c0b2b8793218890d8f42880b41fe0e2dc887fbca3f05880ffdb82480d
+deleted: sha256:3481b0b5a7442dfd9e10dd3670fb0730eb25313b0e3383f288d0a026e919aa15
+deleted: sha256:24568bbca47dc35136237102a33ddb4eedb7886f980f8e85cb5f0229cd6e1f94
+deleted: sha256:9adb99c2c51a6d97f642941cd8dbf06115700646c102dc661cb4bd87b58ece6d
+deleted: sha256:4b9fb0583171e7369c54636678e4a6306bee3a9af559b42fb40d8aa52305a45b
+deleted: sha256:c5fa286ee5b4ecec628674215ae49f583e00d973f08aa84921740a4db82794c3
+
+Total reclaimed space: 338.7MB
+0d13e734c7dab3e28dce48d2693b589161f9df574f703bbc03be56fd61c278c2
+Finished: SUCCESS
