@@ -39,6 +39,9 @@ sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
 # Build Jenkins container
 sh /home/khanh_doth/dev/git/u-cloud/jenkins/build.sh
 
+# Build my_hello prod container
+sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
+
 # Build CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
 
