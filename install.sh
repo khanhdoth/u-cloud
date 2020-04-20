@@ -11,17 +11,24 @@ ufw enable
 # install Docker
 apt -y install docker.io
 
+# delete folder dev 
+rm -R /home/khanh_doth/dev
+
+# create dev/git and clone projects from git
 cd /home/khanh_doth
 mkdir dev
 cd dev
 mkdir git
 cd git
 
-# Clone u-cloud
+# Clone project u-cloud
 git clone https://github.com/khanhdoth/u-cloud
 
-# Clone my_hello
+# Clone project my_hello
 git clone https://github.com/khanhdoth/my_hello
+
+# Clone project flutter_app
+git clone https://github.com/khanhdoth/flutter_app
 
 # Build postgres
 sh /home/khanh_doth/dev/git/u-cloud/postgres/build.sh
