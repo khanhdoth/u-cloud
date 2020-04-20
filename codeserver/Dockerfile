@@ -4,7 +4,34 @@ USER root
 
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
-    code-server --install-extension donjayamanne.githistory
+    code-server --install-extension donjayamanne.githistory && \
+    code-server --install-extension ms-vscode.go && \
+    code-server --install-extension msjsdiag.vscode-react-native && \
+    code-server --install-extension shaharkazaz.git-merger && \
+    code-server --install-extension boukichi.git-exclude && \
+    code-server --install-extension ms-azuretools.vscode-docker && \
+    code-server --install-extension ms-python.python && \
+    code-server --install-extension ms-vscode.cpptools && \
+    code-server --install-extension msjsdiag.debugger-for-chrome && \
+    code-server --install-extension vscode-icons-team.vscode-icons && \
+    code-server --install-extension ms-dotnettools.csharp && \
+    code-server --install-extension eamodio.gitlens && \
+    code-server --install-extension esbenp.prettier-vscode && \
+    code-server --install-extension redhat.java && \
+    code-server --install-extension vscjava.vscode-maven && \
+    code-server --install-extension formulahendry.code-runner && \
+    code-server --install-extension johnpapa.angular2 && \
+    code-server --install-extension mikael.angular-beastcode && \
+    code-server --install-extension pkief.material-icon-theme && \
+    code-server --install-extension ckolkman.vscode-postgres && \
+    code-server --install-extension yzane.markdown-pdf && \
+    code-server --install-extension telesoho.vscode-markdown-paste-image && \
+    code-server --install-extension rebornix.ruby && \
+    code-server --install-extension bajdzis.vscode-database && \
+    code-server --install-extension ecmel.vscode-html-css && \
+    code-server --install-extension davidanson.vscode-markdownlint && \
+    code-server --install-extension ritwickdey.liveserver && \
+    code-server --install-extension yzhang.markdown-all-in-one
 
 # configure git
 RUN whoami
