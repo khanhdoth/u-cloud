@@ -30,6 +30,7 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension ecmel.vscode-html-css && \
     code-server --install-extension davidanson.vscode-markdownlint && \
     code-server --install-extension ritwickdey.liveserver && \
+    code-server --install-extension dart-code.dart-code && \
     code-server --install-extension yzhang.markdown-all-in-one
 
 # configure git
