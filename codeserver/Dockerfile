@@ -18,7 +18,6 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension eamodio.gitlens && \
     code-server --install-extension esbenp.prettier-vscode && \
     code-server --install-extension redhat.java && \
-    code-server --install-extension vscjava.vscode-maven && \
     code-server --install-extension formulahendry.code-runner && \
     code-server --install-extension johnpapa.angular2 && \
     code-server --install-extension mikael.angular-beastcode && \
