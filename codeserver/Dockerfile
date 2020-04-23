@@ -4,12 +4,12 @@ USER root
 
 
 # install build dependencies
-RUN apt install wget && \
-    wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
-    dpkg -i erlang-solutions_2.0_all.deb && \
-    apt update && \
-    apt install esl-erlang && \
-    apt install elixir
+# RUN apt install wget && \
+#    wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
+#    dpkg -i erlang-solutions_2.0_all.deb && \
+#    apt update && \
+#    apt install esl-erlang && \
+#    apt install elixir
 
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
