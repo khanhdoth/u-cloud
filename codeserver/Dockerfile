@@ -9,8 +9,7 @@ RUN apt update && \
     wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
     dpkg -i erlang-solutions_2.0_all.deb && \
     apt update && \
-    apt install esl-erlang && \
-    apt install elixir
+    apt --assume-yes install esl-erlang elixir
 
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
@@ -44,8 +43,8 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension yzhang.markdown-all-in-one
 
 # install hex + rebar
-# RUN mix local.hex --force && \
-#     mix local.rebar --force
+RUN mix local.hex --force && \
+    mix local.rebar --force
 
 # configure git
 RUN whoami
