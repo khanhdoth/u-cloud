@@ -2,6 +2,14 @@ FROM codercom/code-server
 
 USER root
 
+
+# install build dependencies
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
+    dpkg -i erlang-solutions_2.0_all.deb && \
+    apt update && \
+    apt install esl-erlang && \
+    apt install elixir
+
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension donjayamanne.githistory && \
@@ -32,9 +40,6 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension ritwickdey.liveserver && \
     code-server --install-extension dart-code.dart-code && \
     code-server --install-extension yzhang.markdown-all-in-one
-
-# install build dependencies
-# RUN apt install git build-base nodejs yarn python npm  
 
 # install hex + rebar
 # RUN mix local.hex --force && \
