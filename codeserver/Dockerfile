@@ -9,7 +9,7 @@ RUN apt update && \
     wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
     dpkg -i erlang-solutions_2.0_all.deb && \
     apt update && \
-    apt --assume-yes install esl-erlang elixir
+    apt --assume-yes install esl-erlang elixir npm
 
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
