@@ -34,7 +34,7 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension yzhang.markdown-all-in-one
 
 # install build dependencies
-RUN apt install git build-base nodejs yarn python npm  
+# RUN apt install git build-base nodejs yarn python npm  
 
 # install hex + rebar
 RUN mix local.hex --force && \
