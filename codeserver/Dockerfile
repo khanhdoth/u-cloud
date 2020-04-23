@@ -37,8 +37,8 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
 # RUN apt install git build-base nodejs yarn python npm  
 
 # install hex + rebar
-RUN mix local.hex --force && \
-    mix local.rebar --force
+# RUN mix local.hex --force && \
+#     mix local.rebar --force
 
 # configure git
 RUN whoami
