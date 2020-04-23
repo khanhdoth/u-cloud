@@ -1,0 +1,10 @@
+Started on Apr 21, 2020 5:31:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 55885ba941abb037b9b4376b997b8712faa6fa55 (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h -- https://github.com/khanhdoth/my_hello # timeout=10
+Found 1 remote heads on https://github.com/khanhdoth/my_hello
+[poll] Latest remote head revision on refs/heads/master is: 228600a6104c3a3048caf0072e3da21715b9db0b
+Done. Took 0.25 sec
+Changes found

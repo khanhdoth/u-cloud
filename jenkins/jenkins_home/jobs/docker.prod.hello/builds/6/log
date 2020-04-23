@@ -1,0 +1,290 @@
+Started by an SCM change
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/docker.prod.hello
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/khanhdoth/my_hello
+ > git init /var/jenkins_home/workspace/docker.prod.hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git --version # timeout=10
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/khanhdoth/my_hello # timeout=10
+Fetching upstream changes from https://github.com/khanhdoth/my_hello
+ > git fetch --tags --progress -- https://github.com/khanhdoth/my_hello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 44ff79fd6430927f5f3ccbab2695c547b119f7fa (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 44ff79fd6430927f5f3ccbab2695c547b119f7fa # timeout=10
+Commit message: "u"
+ > git rev-list --no-walk 264a9f408470aa28082cf7150db4da599b06ade5 # timeout=10
+[docker.prod.hello] $ /bin/sh -xe /tmp/jenkins2768248065248192659.sh
++ /home/host/dev/git/my_hello/prod.build.jenkins.sh
+Build My Hello production container from Jenkins
+Current user is:
+root
+Error: No such container: my-running-hello
+Error: No such image: my-hello:prod
+Sending build context to Docker daemon   23.8MB
+Step 1/29 : FROM elixir:1.9.0-alpine as build
+ ---> 7a6d28e4b511
+Step 2/29 : RUN apk add --update git build-base nodejs yarn python npm
+ ---> Using cache
+ ---> 94442dd2b3ae
+Step 3/29 : RUN mkdir /app
+ ---> Using cache
+ ---> c6cf3bc93b37
+Step 4/29 : WORKDIR /app
+ ---> Using cache
+ ---> 967a4f96839e
+Step 5/29 : RUN mix local.hex --force &&     mix local.rebar --force
+ ---> Using cache
+ ---> 389306c2e042
+Step 6/29 : ENV MIX_ENV=prod
+ ---> Using cache
+ ---> 504e17307e9f
+Step 7/29 : ENV DATABASE_URL=ecto://postgres:postgres@172.17.0.1/hello_dev
+ ---> Using cache
+ ---> 62cb3be952a4
+Step 8/29 : ENV SECRET_KEY_BASE=VB+XSWMk5FvJVcXZIhJ0JFiN0R+E+2AxjIbx9NowOazugoqfKnqib47dmXD88cB+
+ ---> Using cache
+ ---> f6f12cb42dac
+Step 9/29 : ENV HTTP_PORT=5000
+ ---> Using cache
+ ---> 6ab63a751d97
+Step 10/29 : ENV HTTPS_PORT=5001
+ ---> Using cache
+ ---> 4616011cbf09
+Step 11/29 : COPY mix.exs mix.lock ./
+ ---> Using cache
+ ---> 6dd81a29768d
+Step 12/29 : COPY config config
+ ---> Using cache
+ ---> da53876072d3
+Step 13/29 : RUN mix deps.get
+ ---> Using cache
+ ---> 887653c1c9ea
+Step 14/29 : RUN mix deps.compile
+ ---> Running in 722c83957b37
+==> connection
+Compiling 1 file (.ex)
+Generated connection app
+==> gettext
+Compiling 1 file (.yrl)
+Compiling 1 file (.erl)
+Compiling 20 files (.ex)
+Generated gettext app
+===> Compiling ranch
+===> Compiling telemetry
+==> decimal
+Compiling 1 file (.ex)
+Generated decimal app
+==> jason
+Compiling 8 files (.ex)
+Generated jason app
+==> db_connection
+Compiling 14 files (.ex)
+Generated db_connection app
+==> ecto
+Compiling 55 files (.ex)
+Compiling lib/ecto/query/builder/lock.ex (it's taking more than 15s)
+Compiling lib/ecto/repo/queryable.ex (it's taking more than 15s)
+Compiling lib/ecto/query/inspect.ex (it's taking more than 15s)
+Compiling lib/ecto/query/builder/filter.ex (it's taking more than 15s)
+Compiling lib/ecto/repo/preloader.ex (it's taking more than 15s)
+Compiling lib/ecto/schema.ex (it's taking more than 15s)
+Compiling lib/ecto/repo/schema.ex (it's taking more than 15s)
+Compiling lib/ecto/embedded.ex (it's taking more than 15s)
+Compiling lib/ecto/query/builder/preload.ex (it's taking more than 15s)
+Compiling lib/ecto/query/planner.ex (it's taking more than 15s)
+Compiling lib/ecto/changeset.ex (it's taking more than 15s)
+Generated ecto app
+==> phoenix_pubsub
+Compiling 13 files (.ex)
+Generated phoenix_pubsub app
+===> Compiling cowlib
+===> Compiling cowboy
+==> mime
+Compiling 2 files (.ex)
+Generated mime app
+==> postgrex
+Compiling 61 files (.ex)
+Compiling lib/postgrex/default_types.ex (it's taking more than 15s)
+Generated postgrex app
+==> ecto_sql
+Compiling 26 files (.ex)
+Generated ecto_sql app
+==> plug_crypto
+Compiling 5 files (.ex)
+Generated plug_crypto app
+==> plug
+Compiling 1 file (.erl)
+Compiling 40 files (.ex)
+[91mwarning: System.stacktrace/0 outside of rescue/catch clauses is deprecated. If you want to support only Elixir v1.7+, you must access __STACKTRACE__ inside a rescue/catch. If you want to support earlier Elixir versions, move System.stacktrace/0 inside a rescue/catch
+  lib/plug/conn/wrapper_error.ex:23
+
+[0mGenerated plug app
+==> phoenix_html
+Compiling 8 files (.ex)
+Generated phoenix_html app
+==> plug_cowboy
+Compiling 6 files (.ex)
+Generated plug_cowboy app
+==> phoenix
+Compiling 67 files (.ex)
+Compiling lib/phoenix/endpoint/render_errors.ex (it's taking more than 15s)
+[91mwarning: Plug.Crypto.safe_binary_to_term/1 is deprecated. Use non_executable_binary_to_term/2
+  lib/phoenix/token.ex:276
+
+[0mGenerated phoenix app
+==> phoenix_ecto
+Compiling 7 files (.ex)
+Generated phoenix_ecto app
+Removing intermediate container 722c83957b37
+ ---> 4d695cd7b1f0
+Step 15/29 : COPY assets assets
+ ---> 71af8b2f13f2
+Step 16/29 : COPY priv priv
+ ---> 82fb03078119
+Step 17/29 : RUN cd assets && npm install && node node_modules/webpack/bin/webpack.js
+ ---> Running in f63b7597bff6
+[91mnpm WARN assets No description
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.12 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+[0madded 731 packages from 311 contributors and audited 8659 packages in 41.951s
+found 0 vulnerabilities
+
+Hash: 749801250f4b2e84f76d
+Version: webpack 4.41.5
+Time: 4872ms
+Built at: 04/20/2020 6:42:22 PM
+                Asset       Size  Chunks             Chunk Names
+       ../css/app.css   9.58 KiB       0  [emitted]  ./js/app.js
+       ../favicon.ico   1.23 KiB          [emitted]  
+../images/phoenix.png   13.6 KiB          [emitted]  
+        ../robots.txt  202 bytes          [emitted]  
+               app.js   2.25 KiB       0  [emitted]  ./js/app.js
+Entrypoint ./js/app.js = ../css/app.css app.js
+[0] multi ./js/app.js 28 bytes {0} [built]
+[1] ./js/app.js 493 bytes {0} [built]
+[2] ./css/app.css 39 bytes {0} [built]
+[3] ../deps/phoenix_html/priv/static/phoenix_html.js 2.21 KiB {0} [built]
+    + 2 hidden modules
+
+WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
+Child mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!css/app.css:
+    Entrypoint mini-css-extract-plugin = *
+    [1] ./node_modules/css-loader/dist/cjs.js!./css/app.css 436 bytes {0} [built]
+    [2] ./node_modules/css-loader/dist/cjs.js!./css/phoenix.css 10.9 KiB {0} [built]
+        + 1 hidden module
+Removing intermediate container f63b7597bff6
+ ---> 0808279e7d7d
+Step 18/29 : RUN mix phx.digest
+ ---> Running in ca50c6608545
+Check your digested files at "priv/static"
+Removing intermediate container ca50c6608545
+ ---> 0ce412bd6f5d
+Step 19/29 : COPY lib lib
+ ---> 06ac8cf324fe
+Step 20/29 : RUN mix compile
+ ---> Running in 1482df0ebea4
+Compiling 13 files (.ex)
+Generated hello app
+Removing intermediate container 1482df0ebea4
+ ---> da4c8343c3f6
+Step 21/29 : RUN mix release
+ ---> Running in 4f04203ba99e
+* assembling master-0.1.0 on MIX_ENV=prod
+* skipping runtime configuration (config/releases.exs not found)
+
+Release created at _build/prod/rel/master!
+
+    # To start your system
+    _build/prod/rel/master/bin/master start
+
+Once the release is running:
+
+    # To connect to it remotely
+    _build/prod/rel/master/bin/master remote
+
+    # To stop it gracefully (you may also send SIGINT/SIGTERM)
+    _build/prod/rel/master/bin/master stop
+
+To list all commands:
+
+    _build/prod/rel/master/bin/master
+
+Removing intermediate container 4f04203ba99e
+ ---> 56c970bd8701
+Step 22/29 : FROM alpine:3.9 AS app
+ ---> 82f67be598eb
+Step 23/29 : RUN apk add --update bash openssl
+ ---> Using cache
+ ---> 8523bda931b9
+Step 24/29 : RUN mkdir /app
+ ---> Using cache
+ ---> d14206f34888
+Step 25/29 : WORKDIR /app
+ ---> Using cache
+ ---> 53c4f2a54afc
+Step 26/29 : COPY --from=build /app/_build/prod/rel/master ./
+ ---> 7a3053d81db7
+Step 27/29 : RUN chown -R nobody: /app
+ ---> Running in 43cbb39dc2ab
+Removing intermediate container 43cbb39dc2ab
+ ---> e9a3146d2bb3
+Step 28/29 : USER nobody
+ ---> Running in 6f5678fb041c
+Removing intermediate container 6f5678fb041c
+ ---> ede4314b178f
+Step 29/29 : ENV HOME=/app
+ ---> Running in 01af11cc8ac2
+Removing intermediate container 01af11cc8ac2
+ ---> 9c59d8e069c2
+Successfully built 9c59d8e069c2
+Successfully tagged my-hello:prod
+Deleted Images:
+deleted: sha256:56c970bd8701e9d5f0481c10ec526d7afaaa3cd405042050f6900085b5f17419
+deleted: sha256:d2f1d67b35c8434f27bce7572716bce04e5fc8eaf11102e0a0e329626a1bf511
+deleted: sha256:da4c8343c3f6a04f0ba6c00668d955b2b43e20126eae8ca0e4d1904996fc3fee
+deleted: sha256:2e2d907e88e9007f8770987f32a5e5ec79efcfa0855064cf057f5267212a333e
+deleted: sha256:06ac8cf324fe3da933446b84ae093c420e94be91e03f5964df7aea77fe20cff2
+deleted: sha256:34db8b63836f8f25ebffa5237ef98d2e92091d698b1c2db972c54c7e0ea2f6b9
+deleted: sha256:0ce412bd6f5d9d824dc87ed51518cfa9b5fb9b4d8673456e7220c5b3d02b07b0
+deleted: sha256:03120e7614ba291e9e4a962604632fc22b223c127250eea45d096daac448e6f3
+deleted: sha256:0808279e7d7d8689a812c0127537f0f1aa99ba3a6eca5fbdc9d06a6c40af2ef6
+deleted: sha256:4e15fd4998f686d7d35542ca1a8e9d64bf71da1fd57935ee2cf8654c57316c2d
+deleted: sha256:82fb030781195f6374b4e1ada6c56409cd69ab5603170f1c6fd27d162005f342
+deleted: sha256:3dfcac948a3d2fe3cbd3e804cd0a7222fff38916b04c783d97d0a8ad5d069331
+deleted: sha256:71af8b2f13f29377e835eaff5dc7625cd56ba7370ff8278c9924c1353b8c1aec
+deleted: sha256:a2b2af715bff6123ccb3004ef49757910990b26ec4bf1ba3d4327d0eae042f08
+deleted: sha256:4d695cd7b1f0c4d64608e76199a12e877305cb7f33f0f91d51ebc619cb75e439
+deleted: sha256:f411951c0cb2c51b475b15baf52033235d3e83cd470694ce854742525eacf305
+deleted: sha256:887653c1c9eada02dce1e1b7c4df5ec2395e46469d2a5bf1c37932fe0e2b9eba
+deleted: sha256:09ec4ca3058de1a8a28dfc9a8e3f04c2771332252cb84301a3be02b0690cf21f
+deleted: sha256:da53876072d33614e6eac39f01c583bd80bad824e26422802baf3fac81add9a4
+deleted: sha256:834dba01528e55ab016ce7c3aad5afcac1151e4763badcb7825917d01b0c715c
+deleted: sha256:6dd81a29768db298820e035892e8414aa76e79a83cdf1ad7a3b5d7d48f68eaf6
+deleted: sha256:f96d0238091e324cb19adbcc7b0472ca0a420cfa1dc6337ddc6728b63002e59d
+deleted: sha256:4616011cbf097f9fa20bfefaaa481d37ef452cdebd8c6b43bb90a9616010011b
+deleted: sha256:6ab63a751d9731ede79ec11cb3180805eeee14f9aab95e065c974787789b1ec4
+deleted: sha256:f6f12cb42dac607dca40d22e74d92a061b36021549b5165d48491c443462922f
+deleted: sha256:62cb3be952a4e46cd201a0fc014b9a1768232a34710355515e8364773a76f2a9
+deleted: sha256:504e17307e9f4b13ae78ad9d82c02d2f3d07aa19e7dee364eb8449827b73cd87
+deleted: sha256:389306c2e042b4ffabcb14571716dc21deb03dabba8eccc4527baebcdf583370
+deleted: sha256:560a20ff0706f6c8f3f1b2afa1fad1fa70c27bd74c8d270f0f3ef6feded81136
+deleted: sha256:967a4f96839eb4e3c5a335d563c54ac8e0420dcd24e771f6706c3d7ca3241f37
+deleted: sha256:c6cf3bc93b375824f2a7fb6930f57c5b0aabf422ee8d1a4474a6ba0b055bf231
+deleted: sha256:37811c985e5cde36741b51a26a4b5cb6a435329839c630ec5eb6c5215a984253
+deleted: sha256:94442dd2b3ae7e89eb405a3da6e099120b0b66403cc5eaf344f56af7fb50dcc1
+deleted: sha256:1a74daaafc97bb7a577e54e251c6872e401b97af932195f263197605ab9ac5bc
+
+Total reclaimed space: 348.3MB
+docker: Error response from daemon: Conflict. The container name "/my-running-hello" is already in use by container "18228f3af8500001ae4ea2f1b2a9356c51827f7e5e167e159d68fd6f4758a879". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+Finished: SUCCESS
