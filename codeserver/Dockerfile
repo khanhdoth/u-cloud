@@ -40,7 +40,9 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension davidanson.vscode-markdownlint && \
     code-server --install-extension ritwickdey.liveserver && \
     code-server --install-extension dart-code.dart-code && \
-    code-server --install-extension yzhang.markdown-all-in-one
+    code-server --install-extension yzhang.markdown-all-in-one && \
+    wget https://raw.githubusercontent.com/khanhdoth/vs-extensions/master/msaraiva.surface-0.4.0.vsix && \
+    code-server --install-extension msaraiva.surface-0.4.0.vsix
 
 # install hex + rebar
 RUN mix local.hex --force && \
