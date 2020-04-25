@@ -9,7 +9,7 @@ apt update
 ufw enable
 
 # install Docker
-apt -y install docker.io
+apt -y install docker.io docker-compose
 
 # delete folder dev 
 rm -R /home/khanh_doth/dev
