@@ -2,10 +2,7 @@ FROM nginx
 
 # install build dependencies
 RUN apt update && \
-    apt --assume-yes install letsencrypt
+    apt --assume-yes install letsencrypt certbot python-certbot-nginx && \
+    certbot --nginx --non-interactive --agree-tos -m khanh.do@sulof.com -d im.sulof.com
 
-# COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
-# COPY ./httpd-ssl.conf /usr/local/apache2/conf/extra/httpd-ssl.conf
-# COPY ./cert/ca_bundle.crt /usr/local/apache2/conf/ca_bundle.crt
-# COPY ./cert/certificate.crt /usr/local/apache2/conf/certificate.crt
-# COPY ./cert/private.key /usr/local/apache2/conf/private.key
+COPY ./default.conf /etc/nginx/conf.d/default.conf

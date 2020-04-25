@@ -4,7 +4,6 @@ echo "Build Nginx container"
 echo "Current user is :"
 whoami
 
-cp -r /home/khanh_doth/dev/git/u-cloud/cert /home/khanh_doth/dev/git/u-cloud/nginx/cert
 cd /home/khanh_doth/dev/git/u-cloud/nginx
 
 # delete running container
@@ -15,8 +14,6 @@ docker image rm my-nginx
 
 # build new image
 docker build -t my-nginx .
-
-rm -r /home/khanh_doth/dev/git/u-cloud/nginx/cert
 
 # create new container based on new image
 cd /home/khanh_doth
