@@ -50,3 +50,6 @@ sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
 
 # Build Portainer container
 sh /home/khanh_doth/dev/git/u-cloud/portainer/build.sh
+
+# delete all unused docker images
+docker image prune -a -f
