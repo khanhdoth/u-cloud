@@ -53,3 +53,6 @@ sh /home/khanh_doth/dev/git/u-cloud/portainer/build.sh
 
 # delete all unused docker images
 docker image prune -a -f
+
+# increase inotify.max_user_watches
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
