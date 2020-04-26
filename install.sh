@@ -33,6 +33,9 @@ git clone https://github.com/khanhdoth/flutter_app
 # Clone project phoenix liveview demo
 git clone https://github.com/khanhdoth/demo
 
+# Build Nginx
+sh /home/khanh_doth/dev/git/u-cloud/nginx/build.sh
+
 # Build postgres
 sh /home/khanh_doth/dev/git/u-cloud/postgres/build.sh
 
