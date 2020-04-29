@@ -39,14 +39,14 @@ git clone https://github.com/khanhdoth/portal
 # Build Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/build.sh
 
-# Build postgres
-sh /home/khanh_doth/dev/git/u-cloud/postgres/build.sh
+# Run postgres
+sh /home/khanh_doth/dev/git/u-cloud/postgres/run.sh
 
 # Build my_hello dev container
 sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
 
 # Build Jenkins container
-sh /home/khanh_doth/dev/git/u-cloud/jenkins/build.sh
+sh /home/khanh_doth/dev/git/u-cloud/jenkins/run.sh
 
 # Build my_hello prod container
 sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
@@ -54,8 +54,8 @@ sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
 # Build CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
 
-# Build Portainer container
-sh /home/khanh_doth/dev/git/u-cloud/portainer/build.sh
+# Run Portainer container
+sh /home/khanh_doth/dev/git/u-cloud/portainer/run.sh
 
 # delete all unused docker images
 docker image prune -a -f
