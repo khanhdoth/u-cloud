@@ -14,7 +14,7 @@ docker image rm my-nginx:pre
 docker image rm my-nginx
 
 # build new image
-docker build -t my-nginx:pre .
+docker build -t my-nginx:pre . -f without_ssl_certificate.Dockerfile
 
 # create new container based on new image
 cd /home/khanh_doth

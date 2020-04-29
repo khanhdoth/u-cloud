@@ -37,7 +37,7 @@ git clone https://github.com/khanhdoth/demo
 git clone https://github.com/khanhdoth/portal
 
 # Build Nginx
-sh /home/khanh_doth/dev/git/u-cloud/nginx/build.sh
+sh /home/khanh_doth/dev/git/u-cloud/nginx/build_with_existing_ssl_certificate.sh
 
 # Run postgres
 sh /home/khanh_doth/dev/git/u-cloud/postgres/run.sh
