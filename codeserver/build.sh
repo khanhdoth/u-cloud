@@ -17,6 +17,7 @@ docker build -t my-code-server .
 
 # create new container based on new image
 sh run.sh
+
 ufw allow 6001
 ufw allow 6501
 ufw allow 8081
