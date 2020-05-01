@@ -36,6 +36,12 @@ git clone https://github.com/khanhdoth/demo
 # Clone project portal
 git clone https://github.com/khanhdoth/portal
 
+# Clone vs extensions
+git clone https://github.com/khanhdoth/vs-extensions
+
+# Clone vs project tanx
+git clone https://github.com/khanhdoth/tanx
+
 # Build Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/build_with_existing_ssl_certificate.sh
 
@@ -43,13 +49,13 @@ sh /home/khanh_doth/dev/git/u-cloud/nginx/build_with_existing_ssl_certificate.sh
 sh /home/khanh_doth/dev/git/u-cloud/postgres/run.sh
 
 # Build my_hello dev container
-sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
+# sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
 
 # Build Jenkins container
 sh /home/khanh_doth/dev/git/u-cloud/jenkins/run.sh
 
 # Build my_hello prod container
-sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
+# sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
 
 # Build CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
