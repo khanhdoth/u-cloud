@@ -13,7 +13,7 @@ docker rm -f my-running-code-server
 docker image rm khanhdo/my-code-server
 
 # build new image
-docker build -t khanhdo/my-code-server . -f Dockerfile-3.3.0-rc.7
+docker build -t khanhdo/my-code-server . -f Dockerfile-tag
 
 # create new container based on new image
 sh run.sh
