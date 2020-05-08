@@ -10,10 +10,10 @@ cd /home/khanh_doth/dev/git/u-cloud/codeserver
 docker rm -f my-running-code-server
 
 # delete image
-docker image rm my-code-server
+docker image rm khanhdo/my-code-server
 
 # build new image
-docker build -t my-code-server .
+docker build -t khanhdo/my-code-server .
 
 # create new container based on new image
 sh run.sh
