@@ -12,3 +12,4 @@ tar -xvzf $GOOGLE_SDK
 rm $GOOGLE_SDK
 yes Y | sh google-cloud-sdk/install.sh
 ./google-cloud-sdk/bin/gcloud init
+./google-cloud-sdk/bin/gcloud components update
