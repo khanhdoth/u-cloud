@@ -49,6 +49,8 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
 RUN mix local.hex --force && \
     mix local.rebar --force
 
+RUN yes Y | mix archive.install hex phx_new    
+
 # configure git
 RUN whoami
 RUN git config --global user.email "khanh.doth@gmail.com" && \
