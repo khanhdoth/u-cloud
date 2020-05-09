@@ -68,3 +68,6 @@ docker image prune -a -f
 
 # increase inotify.max_user_watches
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+# install Google Cloud SDK
+sh /home/khanh_doth/dev/git/u-cloud/install.google.cloud.sdk.sh
