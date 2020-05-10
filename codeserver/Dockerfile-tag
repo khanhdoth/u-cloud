@@ -2,16 +2,6 @@ FROM codercom/code-server:3.2.0
 
 USER root
 
-
-# install build dependencies
-RUN apt update && \
-    apt --assume-yes install wget gnupg gnupg1 gnupg2 && \
-    wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && \
-    dpkg -i erlang-solutions_2.0_all.deb && \
-    apt update && \
-    apt --assume-yes install esl-erlang elixir npm inotify-tools && \
-    npm install -g @angular/cli    
-
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension donjayamanne.githistory && \
@@ -44,10 +34,6 @@ RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension yzhang.markdown-all-in-one && \
     wget https://raw.githubusercontent.com/khanhdoth/vs-extensions/master/msaraiva.surface-0.4.0.vsix && \
     code-server --install-extension msaraiva.surface-0.4.0.vsix
-
-# install hex + rebar
-RUN mix local.hex --force && \
-    mix local.rebar --force
 
 # configure git
 RUN whoami
