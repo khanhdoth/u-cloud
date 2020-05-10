@@ -2,6 +2,10 @@ FROM codercom/code-server
 
 USER root
 
+# install build dependencies
+RUN apt update && \
+    apt --assume-yes install wget
+
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
     code-server --install-extension donjayamanne.githistory && \
