@@ -60,6 +60,9 @@ sh /home/khanh_doth/dev/git/u-cloud/jenkins/run.sh
 # Build CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/build.sh
 
+# Build Dev container
+sh /home/khanh_doth/dev/git/u-cloud/dev/build.sh
+
 # Run Portainer container
 sh /home/khanh_doth/dev/git/u-cloud/portainer/run.sh
 

@@ -42,23 +42,20 @@ git clone https://github.com/khanhdoth/vs-extensions
 # Clone vs project tanx
 git clone https://github.com/khanhdoth/tanx
 
-# Build Nginx
+# Run Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/run.sh
 
 # Run postgres
 sh /home/khanh_doth/dev/git/u-cloud/postgres/run.sh
 
-# Build my_hello dev container
-# sh /home/khanh_doth/dev/git/my_hello/dev.build.sh
-
-# Build Jenkins container
+# Run Jenkins container
 sh /home/khanh_doth/dev/git/u-cloud/jenkins/run.sh
 
-# Build my_hello prod container
-# sh /home/khanh_doth/dev/git/my_hello/prod.build.sh
-
-# Build CodeServer container
+# Run CodeServer container
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/run.sh
+
+# Run dev container
+sh /home/khanh_doth/dev/git/u-cloud/dev/run.sh
 
 # Run Portainer container
 sh /home/khanh_doth/dev/git/u-cloud/portainer/run.sh
