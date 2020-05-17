@@ -6,8 +6,8 @@ USER root
 RUN apt update && \
     apt --assume-yes install wget gnupg gnupg1 gnupg2
 
-ADD install_kubernetes.sh /
-RUN chmod +x /install_kubernetes.sh
+# ADD install_kubernetes.sh /
+# RUN chmod +x /install_kubernetes.sh
 
 # install extentions
 RUN code-server --install-extension mjmcloug.vscode-elixir && \
