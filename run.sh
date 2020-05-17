@@ -52,6 +52,9 @@ git clone https://github.com/khanhdoth/tanx
 # Clone project eportal
 git clone https://github.com/khanhdoth/eportal
 
+# Clone project el_kube
+git clone https://github.com/khanhdoth/el_kube
+
 # install kubernetes
 sh /home/khanh_doth/dev/git/u-cloude/codeserver/install_kubernetes.sh
 
