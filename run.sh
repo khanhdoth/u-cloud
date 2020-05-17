@@ -12,10 +12,11 @@ ufw enable
 apt -y install docker.io docker-compose
 
 # install kubernetes
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin/kubectl
-kubectl version --client
+# curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+# chmod +x ./kubectl
+# mv ./kubectl /usr/local/bin/kubectl
+# kubectl version --client
+
 
 # delete folder dev 
 rm -R /home/khanh_doth/dev
@@ -50,6 +51,9 @@ git clone https://github.com/khanhdoth/tanx
 
 # Clone project eportal
 git clone https://github.com/khanhdoth/eportal
+
+# install kubernetes
+sh /home/khanh_doth/dev/git/u-cloude/codeserver/install_kubernetes.sh
 
 # Run Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/run.sh
