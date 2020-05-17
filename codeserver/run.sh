@@ -10,4 +10,5 @@ docker run -u 0 -dit --restart always --name my-running-code-server \
     -p 8081:8080 \
     -v "$PWD:/home/coder/project" \
     -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /run/snapd.socket:/run/snapd.socket \
     -v /usr/bin/docker:/usr/bin/docker khanhdo/my-code-server --auth none
