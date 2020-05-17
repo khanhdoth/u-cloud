@@ -56,7 +56,7 @@ git clone https://github.com/khanhdoth/eportal
 git clone https://github.com/khanhdoth/el_kube
 
 # install kubernetes
-sh /home/khanh_doth/dev/git/u-cloude/codeserver/install_kubernetes.sh
+sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_kubernetes.sh
 
 # Run Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/run.sh
