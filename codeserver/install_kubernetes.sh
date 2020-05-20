@@ -35,7 +35,6 @@ sudo adduser root libvirt-qemu
 newgrp libvirt
 newgrp libvirt-qemu
 cp /home/khanh_doth/dev/git/u-cloud/codeserver/interfaces /etc/network/interfaces
-ip addr flush ens4 && systemctl restart networking
 
 # install minikube
 curl -Lo minikube  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
