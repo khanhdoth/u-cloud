@@ -11,3 +11,12 @@ kubectl version --client
 #sudo apt update
 #sudo apt install snapd
 #sudo snap install microk8s --classic
+
+# install KVM
+apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin
+
+# install minikube
+curl -Lo minikube  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube
+mkdir -p /usr/local/bin/
+install minikube /usr/local/bin/
