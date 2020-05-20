@@ -4,7 +4,7 @@
 
 # update & install dependencies
 apt update
-apt install apt-transport-https ca-certificates curl software-properties-common gnupg2 ufw git
+apt -y install apt-transport-https ca-certificates curl software-properties-common gnupg2 ufw git
 
 # enable firewall ufw
 ufw enable
@@ -14,7 +14,7 @@ ufw enable
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt update
-apt install docker-ce docker-compose
+apt -y install docker-ce docker-compose
 
 
 # delete folder dev 
