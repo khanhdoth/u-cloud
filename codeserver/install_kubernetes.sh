@@ -13,7 +13,32 @@ kubectl version --client
 #sudo snap install microk8s --classic
 
 # install KVM
-apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin
+## https://www.linuxtechi.com/install-configure-kvm-debian-10-buster/
+
+## Check Whether Virtualization Extension is enabled or not
+grep -E --color '(vmx|svm)' /proc/cpuinfo
+
+## Install QEMU-KVM & Libvirt packages along with virt-manager
+apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
+systemctl status libvirtd.service
+
+## Start default network and add vhost_net module
+virsh net-list --all
+virsh net-start default
+modprobe vhost_net
+echo "vhost_net" | sudo  tee -a /etc/modules
+lsmod | grep vhost
+adduser khanh_doth libvirt
+adduser root libvirt
+sudo adduser khanh_doth libvirt-qemu
+sudo adduser root libvirt-qemu
+newgrp libvirt
+newgrp libvirt-qemu
+
+# auto lo br0
+# iface ens33 inet manual
+# iface br0 inet dhcp
+#    bridge_ports ens33
 
 # install minikube
 curl -Lo minikube  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
