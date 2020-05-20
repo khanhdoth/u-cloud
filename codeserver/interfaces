@@ -8,7 +8,7 @@ source-directory /etc/network/interfaces.d
 # configuration fragments are stored in /run:
 source-directory /run/network/interfaces.d
 
-# configure bridge
+# configure bridge using dhcp
 auto lo br0
 iface ens4 inet manual
 
