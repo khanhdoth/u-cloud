@@ -39,8 +39,7 @@ newgrp libvirt-qemu
 # iface ens33 inet manual
 # iface br0 inet dhcp
 #    bridge_ports ens33
-
-
+reboot
 
 # install minikube
 curl -Lo minikube  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
