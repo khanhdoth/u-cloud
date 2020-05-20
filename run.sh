@@ -4,7 +4,7 @@
 
 # update & install dependencies
 apt update
-apt -y install apt-transport-https ca-certificates curl software-properties-common gnupg2 ufw git
+apt -y install apt-transport-https ca-certificates curl software-properties-common gnupg2 ufw git pass
 
 # enable firewall ufw
 ufw enable
