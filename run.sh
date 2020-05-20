@@ -2,20 +2,19 @@
 
 # export DEBIAN_FRONTEND=noninteractive
 
-# update
+# update & install dependencies
 apt update
+apt install apt-transport-https ca-certificates curl software-properties-common gnupg2 ufw
 
 # enable firewall ufw
 ufw enable
 
 # install Docker
-apt -y install docker.io docker-compose
-
-# install kubernetes
-# curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-# chmod +x ./kubectl
-# mv ./kubectl /usr/local/bin/kubectl
-# kubectl version --client
+# apt -y install docker.io docker-compose
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+apt update
+apt install docker-ce docker-compose
 
 
 # delete folder dev 
