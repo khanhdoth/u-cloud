@@ -54,9 +54,6 @@ git clone https://github.com/khanhdoth/eportal
 # Clone project el_kube
 git clone https://github.com/khanhdoth/el_kube
 
-# install kubernetes
-sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_kubernetes.sh
-
 # Run Nginx
 sh /home/khanh_doth/dev/git/u-cloud/nginx/run.sh
 
@@ -83,3 +80,6 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 # install Google Cloud SDK
 sh /home/khanh_doth/dev/git/u-cloud/install.google.cloud.sdk.sh
+
+# install kubernetes
+sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_kubernetes.sh
