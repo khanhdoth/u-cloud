@@ -13,7 +13,7 @@ ufw enable
 # apt -y install docker.io docker-compose
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-apt update
+apt -y update
 apt -y install docker-ce docker-compose
 
 
