@@ -1,3 +1,5 @@
+#!/bin/bash
+
 apt update && sudo apt install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -37,11 +39,4 @@ newgrp libvirt-qemu
 cp /home/khanh_doth/dev/git/u-cloud/codeserver/interfaces /etc/network/interfaces
 
 # install minikube
-curl -Lo minikube  https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-  && chmod +x minikube
-mkdir -p /usr/local/bin/
-install minikube /usr/local/bin/
-minikube start --driver=docker
-minikube status
-
-#reboot
+sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_minikube.sh

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CS_VERSION=code-server-3.2.0-linux-arm64.tar.gz
 useradd -m -s /bin/bash code
 passwd code
