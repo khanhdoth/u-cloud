@@ -7,4 +7,3 @@ install minikube /usr/local/bin/
 minikube start --driver=none
 minikube status
 
-#reboot

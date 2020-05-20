@@ -83,3 +83,8 @@ sh /home/khanh_doth/dev/git/u-cloud/install.google.cloud.sdk.sh
 
 # install kubernetes
 sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_kubernetes.sh
+
+# install minikube
+sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_minikube.sh
+
+reboot

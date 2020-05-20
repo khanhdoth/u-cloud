@@ -37,6 +37,3 @@ sudo adduser root libvirt-qemu
 newgrp libvirt
 newgrp libvirt-qemu
 cp /home/khanh_doth/dev/git/u-cloud/codeserver/interfaces /etc/network/interfaces
-
-# install minikube
-sh /home/khanh_doth/dev/git/u-cloud/codeserver/install_minikube.sh
