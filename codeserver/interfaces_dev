@@ -8,9 +8,18 @@ source-directory /etc/network/interfaces.d
 # configuration fragments are stored in /run:
 source-directory /run/network/interfaces.d
 
-# configure bridge using dhcp
-auto lo br0
-iface ens33 inet manual
+# Primary network interface
+auto ens33
+iface ens3 inet manual
 
-iface br0 inet dhcp
-    bridge_ports ens33
+# Bridge definitions
+auto br1
+iface br1 inet static
+bridge_ports ens33
+bridge_stp off
+address 192.168.112.201
+network 192.168.112.0
+netmask 255.255.255.0
+broadcast 192.168.112.255
+gateway 192.168.112.2
+dns-nameservers 192.168.112.2
