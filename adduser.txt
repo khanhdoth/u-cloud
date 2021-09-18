@@ -34,3 +34,8 @@ olus_dotha@instance-1:~$ su - khanh_doth
 Password: 
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
+
+----
+
+
+wget -O - https://raw.githubusercontent.com/<username>/<project>/<branch>/<path>/<file> | bash
