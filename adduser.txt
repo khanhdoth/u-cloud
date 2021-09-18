@@ -1,0 +1,36 @@
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.15.0-1098-gcp x86_64)
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+0 packages can be updated.
+0 of these updates are security updates.
+New release '18.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+Last login: Sat Sep 18 07:36:39 2021 from 35.235.243.65
+olus_dotha@instance-1:~$ adduser khanh_doth
+adduser: Only root may add a user or group to the system.
+olus_dotha@instance-1:~$ sudo adduser khanh_doth
+Adding user `khanh_doth' ...
+Adding new group `khanh_doth' (1003) ...
+Adding new user `khanh_doth' (1002) with group `khanh_doth' ...
+Creating home directory `/home/khanh_doth' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for khanh_doth
+Enter the new value, or press ENTER for the default
+        Full Name []: Olus Do
+        Room Number []: 000
+        Work Phone []: 000 
+        Home Phone []: 000
+        Other []: 000
+Is the information correct? [Y/n] Y
+olus_dotha@instance-1:~$ usermod -aG sudo khanh_doth
+usermod: Permission denied.
+usermod: cannot lock /etc/passwd; try again later.
+olus_dotha@instance-1:~$ sudo usermod -aG sudo khanh_doth
+olus_dotha@instance-1:~$ su - khanh_doth
+Password: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
